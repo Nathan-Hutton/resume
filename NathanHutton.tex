@@ -1,10 +1,3 @@
-%-------------------------
-% Resume in Latex
-% Author : Sourabh Bajaj
-% Website: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
-
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
@@ -14,10 +7,23 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage{xcolor}
-\definecolor{darkcyan}{rgb}{0, 0.4, 0.8}    % Define darker blue
-\usepackage[colorlinks=true, linkcolor={0,0,0.5}, urlcolor=darkcyan]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
 
 
 \pagestyle{fancy}
@@ -27,8 +33,8 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
-\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
@@ -44,135 +50,171 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-\vspace{-1pt}\item[]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Nathan Hutton}\\
-  \footnotesize YouTube : \href{https://www.youtube.com/@nathanhutton3895}{www.youtube.com/@nathanhutton3895} & \footnotesize Phone : 801-560-3611\\
-  \footnotesize LinkedIn : \href{https://www.linkedin.com/in/nathanhutton/}{www.linkedin.com/in/nathanhutton/} & \footnotesize Email : \href{mailto:nathan.d.hutton@proton.me}{nathan.d.hutton@proton.me}\\
-  \footnotesize GitHub : \href{https://github.com/Nathan-Hutton}{github.com/Nathan-Hutton}
-\end{tabular*}
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Nathan Hutton} \\ \vspace{1pt}
+    \small 801-560-3611 $|$ \href{mailto:nathan.d.hutton@proton.me}{\underline{nathan.d.hutton@proton.me}} $|$
+    \href{https://www.linkedin.com/in/nathanhutton/}{\underline{linkedin.com/in/nathanhutton}} $|$
+    \href{https://github.com/Nathan-Hutton}{\underline{github.com/nathan-hutton}}
+    \href{https://www.youtube.com/@nathanhutton3895}{\underline{youtube.com/@nathanhutton3895}}
+\end{center}
 
-%-----------EDUCATION-----------------
+
+%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University of Utah}{SLC, UT}
-      {Master of Computer Graphics and Data Visualization | GPA: 4.0}{Dec. 2025}
+      {University of Utah}{Dec. 2025}
+	  {M.S. Computer Graphics \& Data Visualization}{GPA: 4.0}
     \resumeSubheading
-      {Westminster University}{SLC, UT}
-      {Bachelor of Computer Science |  GPA: 4.0}{May. 2024}
-      \begin{itemize}[after=\vspace{-1em}]
-          \small 
-          \itemsep 0.0em
-          \item Applied mathematics minor.
-          \item Received the outstanding computer science student of the year award.
-      \end{itemize}
-    \resumeSubheading
-      {Salt Lake Community College}{SLC, UT}
-      {Associate of Science | GPA: 4.0}{May. 2021}
-      \begin{itemize}[after=\vspace{-1em}]
-          \small 
-          \itemsep 0.0em
-          \item Earned degree while in high school.
-      \end{itemize}
+      {Westminster University}{May 2024}
+      {B.S. Cohputer Science, Minor in Applied Mathematics}{GPA: 4.0}
+      \resumeItemListStart
+	    \resumeItem{Awarded outstanding computer science student of the year}
+	  \resumeItemListEnd
+	\resumeSubheading
+	  {Salt Lake Community College}{May 2021}
+	  {A.S. General Education}{GPA: 4.0}
+      \resumeItemListStart
+	    \resumeItem{Earned degree while in high school}
+	  \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
-%-----------EXPERIENCE-----------------
+%-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-  	\resumeSubheading
-	  {Flight Safety International}{Broken Arrow, OK}
-	  {Software Engineer Intern}{May. 2025 - Aug. 2025}
-      \begin{itemize}[before=\vspace{-0.85em},after=\vspace{-1em}]
-          \small 
-          \itemsep 0.0em
-		  \item Helped integrate Phidgets API with RACKtangle hardware for real-time flight simulation I/O in C++.
-		  \item Worked exclusively on Windows \& Visual Studio.
-      \end{itemize}
 
     \resumeSubheading
+      {Software Engineer Intern}{May 2025 -- Aug. 2025}
+      {Flight Safety International}{Broken Arrow, OK}
+      \resumeItemListStart
+        \resumeItem{Helped integrate Phidgets API with RACKtangle hardware for real-time flight simulation I/O in C++}
+        \resumeItem{Worked exlusively in Windows and Visual Studio}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer Intern}{Feb. 2023 -- May 2024}
       {Idaho National Laboratory}{SLC, UT}
-      {Software Engineer Intern}{Feb. 2023 - May. 2024}
-      \begin{itemize}[before=\vspace{-0.85em},after=\vspace{-1em}]
-          \small 
-          \itemsep 0.0em
-          \item Debug and reformat C++, C, and Python code.
-          \item Convert Matlab test harness to Python.
-          \item Configure CI/CD pipelines.
-          \item Implement, refactor, and debug GUIs.
-		  \item Worked exclusively on Linux.
-      \end{itemize}
+      \resumeItemListStart
+        \resumeItem{Debug and reformat C++, C, and Python code}
+        \resumeItem{Convert Matlab test harness to Python}
+        \resumeItem{Configure CI/CD pipelines}
+        \resumeItem{Implement, refactor, and debug GUIs}
+        \resumeItem{Worked exclusively on Linux}
+	  \resumeItemListEnd
 
     \resumeSubheading
+      {Computer Science Tutor/TA}{Aug. 2022 -- Dec. 2023}
       {Westminster University}{SLC, UT}
-      {Computer Science Tutor/TA}{Aug. 2022 - Dec. 2023}
 
     \resumeSubheading
+      {IT Technician}{Aug. 2021 -- May 2024}
       {Westminster University}{SLC, UT}
-      {IT Technician}{Aug. 2021 - May. 2024}
+
   \resumeSubHeadingListEnd
 
 
-%-----------PROJECTS-----------------
+%-----------PROJECTS-----------
 \section{Projects}
-  \resumeSubHeadingListStart
-	\resumeSubItem{\href{https://github.com/Nathan-Hutton/boids}{Boids Flocking Simulation} [\href{https://www.youtube.com/watch?v=AMXlc43AJDk}{Demo Video}]}
-	  {OpenGL flocking simulation in C++. A simple ruleset by Craig Reynolds leads to complex flocking behavior. Uses IMGui, color blending in the HSB colorspace, and obstacle avoidance.}
-	\resumeSubItem{\href{https://github.com/Nathan-Hutton/solar-system}{Solar System} [\href{https://www.youtube.com/watch?v=KRmn0imU6Xk}{Demo Video}]}
-      {Solar system simulation with dynamic physics in OpenGL/C++. Utilizes shadow mapping, HDR, environment mapping, verlet numerical integration, bloom, and more.}
-	\resumeSubItem{\href{https://dataviscourse2024.github.io/group-project-air-quality-visual-1/}{AQI Visualization} [\href{https://www.youtube.com/watch?v=UqxseaUaWtI}{Demo Video}]}
-      {Interactive visualization for Utah's air quality index using Javascript and D3. I made 68\% of all commits in this group project.}
-	\resumeSubItem{\href{https://github.com/Nathan-Hutton/volume-rendering}{Volume Renderer} [\href{https://www.youtube.com/watch?v=h8PkjEuc3yY}{Demo Video}]}
-	  {OpenGL/C++ volume renderer with modifiable transfer functions.}
-    \resumeSubItem{\href{https://github.com/CharlesBirdgv/Squibblets}{Squibblets}}
-      {4-person team Unity project using AGILE. I made 54\% of all commits and created the main gameplay loop, movement, online leaderboards, audio, AI, UI, menus, and more.}
-    \resumeSubItem{\href{https://github.com/Nathan-Hutton/Ray-Tracer}{Ray Tracer}}
-      {Python Ray Tracer made with no reliance on third-party libraries.}
-    \resumeSubItem{\href{https://github.com/Nathan-Hutton/Minijava_Compiler_AST}{Minijava Compiler}}
-      {Includes type-checking, lexing and parsing with ANTLR4, JVM assembly code generation, AST generation, flow control, package inclusion, and method calls.}
-    \resumeSubItem{\href{https://github.com/Nathan-Hutton/Chatroom}{Java Chatroom}}
-      {Terminal based chatroom utilizing java.net. Features include broadcast messages, private messages, user list retrieval, and notifications when users join or leave.}
-  \resumeSubHeadingListEnd
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+		  {\textbf{Boids Flocking Simulation} $|$ \emph{C++, OpenGL, ImGui}}{\href{https://github.com/Nathan-Hutton/boids}{\underline{GitHub}} $|$ \href{www.youtube.com/watch?v=AMXlc43AJDk}{\underline{Video}}}
+          \resumeItemListStart
+		  	\resumeItem{A simple ruleset by Craig Reynolds leads to complex flocking behavior}
+			\resumeItem{Extensive customization and debugging implemented with ImGui}
+          \resumeItemListEnd
 
-%
-%--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
- \textbf{Languages}{: C++, Python, C, Java, C\#, Javascript}
- \hfill
- \textbf{Tech}{: OpenGL, Linux, Docker, Gitlab CI/CD, D3}
+		\resumeProjectHeading
+			{\textbf{Solar System} $|$ \emph{C++, OpenGL}}{\href{https://github.com/Nathan-Hutton/solar-system}{\underline{GitHub}} $|$ \href{https://www.youtube.com/watch?v=KRmn0imU6Xk}{\underline{Video}}}
+			\resumeItemListStart
+			  \resumeItem{Dynamic physics, shadow maps, bloom, and verlet numerical integration}
+			\resumeItemListEnd
+
+		\resumeProjectHeading
+			{\textbf{Volme Renderer} $|$ \emph{C++, OpenGL, Glui}}{\href{https://github.com/Nathan-Hutton/volume-rendering/tree/main}{\underline{GitHub}} $|$ \href{https://www.youtube.com/watch?v=h8PkjEuc3yY}{\underline{Video}}}
+			\resumeItemListStart
+			  \resumeItem{Ray marching in GLSL with modifiable transfer functions}
+			\resumeItemListEnd
+		\resumeProjectHeading
+			{\textbf{AQI Visualization} $|$ Javascript, D3, JSON}{\href{PLACEHOLDER URL}{\underline{PLACEHOLDER GITHUB}} $|$ \href{https://www.youtube.com/watch?v=UqxseaUaWtI}{\underline{Video}}}
+			\resumeItemListStart
+			  \resumeItem{Interactive visualization for Utah's air quality index}
+			  \resumeItem{I made 63\% of all commits}
+			\resumeItemListEnd
+
+		\resumeProjectHeading
+			{\textbf{Squibblets} $|$ C\#, Unity, Firebase, AGILE}{\href{https://github.com/Nathan-Hutton/Squibblets}{\underline{GitHub}}}
+			\resumeItemListStart
+			  \resumeItem{4-person team project. I made the gameplay loop, online leaderboard, UI, and 54\% of all commits}
+			\resumeItemListEnd
+		\resumeProjectHeading
+			{\textbf{Mass Spring System} $|$ C++, OpenGL, Eigen}{\href{https://github.com/Nathan-Hutton/mass-spring}{\underline{GitHub}}}
+			\resumeItemListStart
+			  \resumeItem{Simulate a mass spring system made up of 8,000 tetrahedrons in real time}
+			\resumeItemListEnd
+		\resumeProjectHeading
+			{\textbf{Ray Tracer} $|$ Python}{\href{https://github.com/Nathan-Hutton/Ray-Tracer}{\underline{GitHub}}}
+	\resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Python, Java, C\#, JavaScript, HTML/CSS, Latex} \\
+     \textbf{Developer Tools}{: Linux, Git, Docker, Vim, VS Code, Visual Studio, PyCharm, IntelliJ} \\
+     \textbf{Libraries}{: OpenGL, NumPy, pandas, ImGui, Matplotlib, Eigen}
+    }}
+ \end{itemize}
+
 
 %-------------------------------------------
 \end{document}
-
